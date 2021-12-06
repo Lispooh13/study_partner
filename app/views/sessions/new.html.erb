@@ -1,6 +1,15 @@
-<%= form_for :session, url: login_path do |f| %>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-
-  <%= f.submit 'ログイン'%>
-<% end %>
+<h1>ログイン</h1>
+<div class="login-form">
+  <%= form_for :session, url: login_path do |f| %>
+  
+    <%= f.label :email %>
+    <%= f.text_field :email , class: 'form-control'%>
+    
+    <%= f.label :password %>
+    <%= f.password_field :password , class: 'form-control'%>
+  
+    <%= f.submit 'ログイン', class: "btn btn-primary"%>
+  <% end %>
+  
+  <p>まだユーザー登録がお済みでない方はこちら <%= link_to "新規登録", signup_path %></p>
+</div>
