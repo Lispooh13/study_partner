@@ -10,11 +10,13 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= link_to 'ログアウト', logout_path, method: :delete %>
-    <% else %>
-      <%= link_to 'ログイン', login_path %>
-    <% end %>
+    <%= render 'layouts/header' %>
+
+    <% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>
 
     <%= yield %>
 
