@@ -1,24 +1,10 @@
-# README
+# Study Partner
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+日々の学習したことを記録するSNS系サイト
 
-Things you may want to cover:
+### サイトテーマ
+毎日の学習のモチベーションを維持、向上を目指す
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### テーマを選んだ理由
+　高校生の一番今困っている課題が、勉強のこと、進路のことだったので、勉強への高いモチベーションを維持できるアプリにしようと思い、制作に取り掛かりました。
