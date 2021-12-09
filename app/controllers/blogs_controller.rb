@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   include SessionsHelper
-  
+  before_action :ensure_correct_user, only: [:edit]
+
   def index
     @blog = Blog.new
     @blogs = Blog.all
@@ -45,25 +46,25 @@ class BlogsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to blogs_path
   end
-  
-  
+
+
   private
 
   def blog_params
     params.require(:blog).permit(:title,:subject, :body, :user_id)
   end
 
-  
+
   def ensure_correct_user
-    @book = Book.find(params[:id])
-    unless @book.user == current_user
-      redirect_to books_path
+    @blog = Blog.find(params[:id])
+    unless @blog.user == current_user
+      redirect_to blogs_path
     end
   end
 end
