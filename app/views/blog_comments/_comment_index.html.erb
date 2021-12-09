@@ -1,16 +1,13 @@
-<table>
-  <% blog.blog_comments.each do |blog_comment| %>
-    <% blog_comment_user = blog_comment.user %>
-    <tr>
-      <td>
-        <%= link_to user_path(blog_comment_user) do%>
-           <%= blog_comment_user.name %>
-         <% end %>
-      </td>
-      <td><%= blog_comment.comment %></td>
-      <% if blog_comment.user == current_user %>
-         <td><%= link_to "Destroy", blog_blog_comment_path(blog_comment.blog_id, blog_comment.id), class: "btn btn-sm btn-danger destroy_blog_12180", method: :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+<% blog.blog_comments.each do |blog_comment| %>
+  <% blog_comment_user = blog_comment.user %>
+  <div class="form-inline">
+    <%= link_to user_path(blog_comment_user) do%>
+      <%= blog_comment_user.name %>
+    <% end %>
+    <%= blog_comment.comment %><br>
+  </div>
+    <% if blog_comment.user == current_user %>
+       <td><%= link_to "コメント削除", blog_blog_comment_path(blog_comment.blog_id, blog_comment.id), class: "btn btn-sm btn-outline-dark destroy_blog_12180", method: :delete %></td>
+    <% end %>
+  <hr>
+<% end %>

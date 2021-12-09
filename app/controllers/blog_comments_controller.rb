@@ -5,6 +5,7 @@ class BlogCommentsController < ApplicationController
     @blog_comment = BlogComment.new(blog_comment_params)
     @blog_comment.blog_id = @blog.id
     @blog_comment.user_id = current_user.id
+    @user = @blog_comment.user
     if @blog_comment.save
       redirect_to blog_path(@blog)
     else

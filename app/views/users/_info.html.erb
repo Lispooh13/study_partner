@@ -9,9 +9,9 @@
       <th>自己紹介</th>
       <th><%= @user.introduction %></th>
     </tr>
-    
+
   </tbody>
 </table>
 <% if @user == current_user %>
-  <%= link_to "編集", edit_user_path(@user) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog", method: :get %>
+  <%= link_to "プロフィール編集", edit_user_path(@user) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog", method: :get %>
 <% end %>
