@@ -10,6 +10,11 @@
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>詳細</h2>
+      <% if @user.id == current_user.id %>
+        <%= link_to "編集", edit_blog_path(@blog) ,class: "btn btn-sm btn-success edit_blog_12180" %>
+        <%= link_to "削除", blog_path(@blog), class: "btn btn-sm btn-danger destroy_blog_12180", method: :delete ,"data-confirm" => "Are you sure？" %><br>
+      <% end %>
+
         <table class="table">
           <tbody>
             <tr></tr>
@@ -35,10 +40,13 @@
             </tr>
           </tbody>
         </table>
-          <% if @user.id == current_user.id %>
-           <%= link_to "編集", edit_blog_path(@blog) ,class: "btn btn-sm btn-success edit_book_12180" %>
-           <%= link_to "削除", blog_path(@blog), class: "btn btn-sm btn-danger destroy_book_12180", method: :delete ,"data-confirm" => "Are you sure？" %><br>
-          <% end %>
+          
+      <div class="comment_index">
+        <%= render 'blog_comments/comment_index', blog: @blog %>
+      </div>
+      <div class="comment">
+      <%= render 'blog_comments/comment', blog: @blog, blog_comment: @blog_comment %>
+      </div>
     </div>
   </div>
 </div>

@@ -28,6 +28,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @user = @blog.user
     @blogs = Blog.new
+    @blog_comment = BlogComment.new
   end
 
   def edit

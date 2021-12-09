@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   
   resources :users, except: [:destroy]
   
-  resources :blogs, except: [:new]
+  resources :blogs, except: [:new] do
+    resources :blog_comments, only: [:create, :destroy]
+  end
 end
