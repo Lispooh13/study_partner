@@ -1,16 +1,20 @@
-<div class = "text-center">
-  <h1>welcome to
-  <i class="fas fa-pencil-alt"></i>
-  <strong>Study Partner</strong> !!
-  </h1>
-  
-  <p>毎日の学習を記録しよう！</p>
-
-
-  <% if !logged_in? %>
-    <%= link_to 'ログイン', login_path, class: "mx-2 btn btn-success"%>
-    <%= link_to '新規登録', signup_path, class: "mx-2 btn btn-primary"%>
-  <% else %>
-    <%= link_to "ログアウト", logout_path, :method => :delete, class: "mx-5 btn btn-dark"%>
-  <% end %>
+<div class="container">
+  <div class ="row mt-4">
+    <div class ="col">
+      <h1>welcome to
+      <i class="fas fa-pencil-alt"></i>
+      <strong>Study Partner</strong> !!
+      </h1>
+      
+      <p>毎日の学習を記録しよう！</p>
+    
+    
+      <% if !logged_in? %>
+        <%= link_to 'ログイン', login_path, class: "mx-2 btn btn-success"%>
+        <%= link_to '新規登録', signup_path, class: "mx-2 btn btn-primary"%>
+      <% else %>
+        <%= link_to "ログアウト", logout_path, :method => :delete, class: "mx-5 btn btn-dark"%>
+      <% end %>
+    </div>
+  </div>
 </div>
