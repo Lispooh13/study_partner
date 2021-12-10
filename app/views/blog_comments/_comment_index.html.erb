@@ -7,7 +7,7 @@
     <%= blog_comment.comment %><br>
   </div>
     <% if blog_comment.user == current_user %>
-       <td><%= link_to "コメント削除", blog_blog_comment_path(blog_comment.blog_id, blog_comment.id), class: "btn btn-sm btn-outline-dark destroy_blog_12180", method: :delete %></td>
+       <td><%= link_to "削除", blog_blog_comment_path(blog_comment.blog_id, blog_comment.id), class: "btn btn-sm btn-outline-danger destroy_blog_12180 fas fa-trash", method: :delete %></td>
     <% end %>
   <hr>
 <% end %>

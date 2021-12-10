@@ -12,7 +12,7 @@
       <h2>詳細</h2>
       <div class="text-right">
         <% if @user.id == current_user.id %>
-          <%= link_to "編集", edit_blog_path(@blog) ,class: "btn btn-success edit_blog_12180" %>
+          <%= link_to "編集", edit_blog_path(@blog) ,class: "btn btn-secondary edit_blog_12180" %>
           <%= link_to "削除", blog_path(@blog), class: "btn btn-danger destroy_blog_12180", method: :delete ,"data-confirm" => "Are you sure？" %><br>
         <% end %>
       </div>
@@ -42,7 +42,7 @@
             </tr>
           </tbody>
         </table>
-          
+
       <div class="comment_index">
         <%= render 'blog_comments/comment_index', blog: @blog %>
       </div>
